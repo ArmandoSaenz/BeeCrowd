@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeeCrowd", "BeeCrowd\BeeCro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knight_Moves", "Knight_Moves\Knight_Moves.csproj", "{B8D6D718-9B35-429D-836B-2DFE6CDB3580}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarRating", "StarRating\StarRating.csproj", "{1F4C5241-CA20-4AED-9CE5-1A7C111B6B0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B8D6D718-9B35-429D-836B-2DFE6CDB3580}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8D6D718-9B35-429D-836B-2DFE6CDB3580}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8D6D718-9B35-429D-836B-2DFE6CDB3580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F4C5241-CA20-4AED-9CE5-1A7C111B6B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F4C5241-CA20-4AED-9CE5-1A7C111B6B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F4C5241-CA20-4AED-9CE5-1A7C111B6B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F4C5241-CA20-4AED-9CE5-1A7C111B6B0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

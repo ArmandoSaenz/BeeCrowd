@@ -19,7 +19,7 @@ namespace Knight_Moves
 
         static bool ValidPos(int pos)
         {
-            return pos > 10 && GetUnidad(pos) <= 8 && GetDecena(pos) <= 8;
+            return pos > 10 && GetUnidad(pos) <= 8 && GetUnidad(pos) >0 && GetDecena(pos) <= 8;
         }
         static int Coord2Pos(string coord)
         {
@@ -50,24 +50,24 @@ namespace Knight_Moves
                     break;
                 }
                 data = reg.Split(' ');
+                siguiente.Clear();
                 siguiente.Add(Coord2Pos(data[0]));
                 fin = Coord2Pos(data[1]);
                 anterior.Clear();
                 actual.Clear();
+                nmoves = 0;
                 do
                 {
                     PushList(siguiente, actual);
                     siguiente.Clear();
+                    nmoves++;
                     foreach (int v in actual)
-                    {
-                        nmoves++;
                         foreach (int mv in moves)
                         {
                             pos = v + mv;
                             if (ValidPos(pos) && !actual.Contains(pos) && !anterior.Contains(pos))
                                 siguiente.Add(pos);
                         }
-                    }
                     PushList(actual, anterior);
                     actual.Clear();
                 }
