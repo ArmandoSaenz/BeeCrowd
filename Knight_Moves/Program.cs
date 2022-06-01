@@ -56,7 +56,7 @@ namespace Knight_Moves
                 anterior.Clear();
                 actual.Clear();
                 nmoves = 0;
-                do
+                while (!siguiente.Contains(fin))
                 {
                     PushList(siguiente, actual);
                     siguiente.Clear();
@@ -71,7 +71,6 @@ namespace Knight_Moves
                     PushList(actual, anterior);
                     actual.Clear();
                 }
-                while (!siguiente.Contains(fin));
                 Console.WriteLine("El numero de movimientos es {0}", nmoves);
             }
         }
