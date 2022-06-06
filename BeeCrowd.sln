@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promedio 1", "Promedio 1\Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flores de Fuego", "Flores de Fuego\Flores de Fuego.csproj", "{D8FDE97A-CEE4-4E92-AE89-5DC2AA600383}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_1501", "Ejercicio_1501\Ejercicio_1501.csproj", "{74F7AD64-C00E-404F-873D-E6B4486E300C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D8FDE97A-CEE4-4E92-AE89-5DC2AA600383}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8FDE97A-CEE4-4E92-AE89-5DC2AA600383}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8FDE97A-CEE4-4E92-AE89-5DC2AA600383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74F7AD64-C00E-404F-873D-E6B4486E300C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F7AD64-C00E-404F-873D-E6B4486E300C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F7AD64-C00E-404F-873D-E6B4486E300C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F7AD64-C00E-404F-873D-E6B4486E300C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
