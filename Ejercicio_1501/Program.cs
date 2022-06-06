@@ -8,66 +8,61 @@ namespace Ejercicio_1501
 {
     internal class Program
     {
-        static ulong Factorial(ulong value)
+        //public variables
+        static int index = (1 << 20) + 20;
+        static double[] li = new double[index];
+        //Algorithm to count zeros
+        static int CountZeros(int num, int nbase)
         {
-            return value <= 1 ? 1 : value*Factorial(value-1); 
-        }
-        static int CountZeros(string cadena)
-        {
-            int zeros = 0;
-            foreach(char caracter in cadena)
-                zeros += caracter == '0' ? 1 : 0;
-            return zeros;
-        }
-        static int CountDigits(string cadena)
-        {
-            /*int digits = 0;
-            foreach (char caracter in cadena)
-                digits += caracter != '0' ? 1 : 0;
-            return digits;
-            */
-            return cadena.Length;
-        }
-        static string Digits2String(int number)
-        {
-            char digit;
-            number += number < 10 ? 48 : 55;
-            digit = (char)number;
-            return digit.ToString();
-        }
-        static string C2Base(ulong num, ulong nbase)
-        {
-            string number = "";
-            int residuo;
-            if (nbase == 10)
-                return num.ToString();
-            do
+            int iterations = 0;
+            int t=0;
+            int b = nbase;
+            int c = 0;
+            int p = 2;
+            //Compute the blocks of least significant zaros
+            for(int i = 2; i<=b; ++i)
             {
-                residuo = (int)(num % nbase);
-                num = num / nbase;
-                number = Digits2String(residuo) + number;
+                if (b % i == 0)
+                {
+                    c = 0;
+                    while(b%i==0)
+                    {
+                        c++;
+                        b /= i;
+                    }
+                    p = i;
+                }
             }
-            while (num!=0);
-            return number;
+            //Compute the least significant zeros count 
+            while(num>0)
+            {
+                num /= p;
+                t += num;
+            }
+            return t / c;
         }
+        static int CountDigits(int num, int nbase)
+        {
+            return (int)Math.Round(Math.Floor(li[num]) / Math.Log(nbase) + 1);
+        }
+        //Main function
         static void Main(string[] args)
         {
+            //local variables
             string datos;
             string[] data;
-            string resultado;
-            ulong num, nbase;
-            ulong factorial;
+            int num, nbase;
+            for (int i = 1; i < index; ++i)
+                li[i] = li[i - 1] + Math.Log(i);
             do
             {
                 datos = Console.ReadLine(); 
                 if (String.IsNullOrEmpty(datos))
                     break;
                 data = datos.Split(' ');
-                num = ulong.Parse(data[0]);
-                nbase = ulong.Parse(data[1]);
-                factorial = Factorial(num);
-                resultado = C2Base(factorial, nbase);
-                Console.WriteLine("{0} {1}", CountZeros(resultado), CountDigits(resultado));
+                num = int.Parse(data[0]);
+                nbase = int.Parse(data[1]);
+                Console.WriteLine("{0} {1}", CountZeros(num,nbase), CountDigits(num, nbase));
             }
             while (true);
         }
