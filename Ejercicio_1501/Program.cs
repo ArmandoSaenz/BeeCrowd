@@ -43,7 +43,7 @@ namespace Ejercicio_1501
         }
         static int CountDigits(int num, int nbase)
         {
-            return (int)Math.Round(Math.Floor(li[num]) / Math.Log(nbase) + 1);
+            return (int)(li[num] / Math.Log(nbase) + 1);
         }
         //Main function
         static void Main(string[] args)
