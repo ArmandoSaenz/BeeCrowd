@@ -21,16 +21,16 @@ namespace Desafio_F
             return cost[i] + cost[j] + Math.Abs(key[i] - key[j]);
         }
         
-        bool Premios(int time, int limit,int[] cost, int[] key)
-        {
-            int nitem = cost.Length;
-            int costo;
-            if(nitem == 2)
-            {
-                costo = time + Costo(cost, key, 0, 1);
-                return costo <= limit ? true : false;
-            }
-        }
+        //bool Premios(int time, int limit,int[] cost, int[] key)
+        //{
+        //    int nitem = cost.Length;
+        //    int costo;
+        //    if(nitem == 2)
+        //    {
+        //        costo = time + Costo(cost, key, 0, 1);
+        //        return costo <= limit ? true : false;
+        //    }
+        //}
     }
     /*
     class Path

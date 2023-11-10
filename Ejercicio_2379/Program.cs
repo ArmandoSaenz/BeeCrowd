@@ -15,7 +15,7 @@ class URI
         BitArray logs1 = new BitArray(6);
         PrintArray(logs1);
         Console.WriteLine();
-        PrintArray(logs1.Not().LeftShift(3));
+        //PrintArray(logs1.Not().LeftShift(3));
         Console.ReadLine();
     }
 }
