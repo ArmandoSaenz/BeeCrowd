@@ -71,6 +71,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_1547", "Ejercicio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_1104", "Ejercicio_1104\Ejercicio_1104.csproj", "{BE9C438B-AEA1-4BD0-BA05-E3246F7F37BC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Concurso_CodeClash_2023", "Concurso_CodeClash_2023", "{0FAA0046-6D60-4935-BBC6-CE36CBD41280}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_E", "Ejercicio_E\Ejercicio_E.csproj", "{2BD3EC2A-A0B3-4209-BFDE-4215D2D91F56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -209,6 +213,10 @@ Global
 		{BE9C438B-AEA1-4BD0-BA05-E3246F7F37BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE9C438B-AEA1-4BD0-BA05-E3246F7F37BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE9C438B-AEA1-4BD0-BA05-E3246F7F37BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BD3EC2A-A0B3-4209-BFDE-4215D2D91F56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD3EC2A-A0B3-4209-BFDE-4215D2D91F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD3EC2A-A0B3-4209-BFDE-4215D2D91F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BD3EC2A-A0B3-4209-BFDE-4215D2D91F56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -217,6 +225,7 @@ Global
 		{CDB12418-2DB2-4540-977C-6A93756E24B2} = {8A39D74D-CD7C-4CC5-9347-D344E90625AC}
 		{444D0356-D6B9-4C76-93A9-14E8BB5E3428} = {8A39D74D-CD7C-4CC5-9347-D344E90625AC}
 		{7677D229-B288-47D5-8C97-FB7978CF430E} = {8A39D74D-CD7C-4CC5-9347-D344E90625AC}
+		{2BD3EC2A-A0B3-4209-BFDE-4215D2D91F56} = {0FAA0046-6D60-4935-BBC6-CE36CBD41280}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6EC46F5C-5333-4A5F-86C0-713CB615C232}
