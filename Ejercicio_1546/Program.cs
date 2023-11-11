@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ejercicio_1546
 {
@@ -13,6 +9,7 @@ namespace Ejercicio_1546
             string[] names = new string[] { "", "Rolien", "Naej", "Elehcim", "Odranoel" };
             string data;
             int n;
+            int T = int.Parse(Console.ReadLine());
             while ((data = Console.ReadLine()) != null)
             {
                 n = int.Parse(data);
