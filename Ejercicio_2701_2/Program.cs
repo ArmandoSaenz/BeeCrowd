@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace Ejercicio_2701
+namespace Ejercicio_2701_2
 {
     class NAND
     {
         public int Input1;
         public int Input2;
-        public decimal totalinputs = 0;
-        public decimal zeros = 0;
-        public decimal ones = 0;
-        public decimal realzeros = 0;
-        public decimal realones = 0;
-        public decimal Limit = 1000000007;
+        public double totalinputs = 0;
+        public double zeros = 0;
+        public double ones = 0;
+        public double realzeros = 0;
+        public double realones = 0;
+        public double Limit = 1000000007;
         public List<NAND> Circuit { get; set; }
         public virtual void Process()
         {
@@ -20,11 +20,16 @@ namespace Ejercicio_2701
             var gate2 = Circuit[Input2];
             gate1.Process();
             gate2.Process();
-            totalinputs = (gate1.totalinputs * gate2.totalinputs) % Limit;
-            zeros = (gate1.ones * gate2.ones) % Limit;
+            totalinputs = (gate1.totalinputs * gate2.totalinputs);
+            zeros = (gate1.ones * gate2.ones);
             ones = (totalinputs - zeros);
-            realzeros = (gate1.realones * gate2.realones) % Limit;
+            realzeros = (gate1.realones * gate2.realones);
             realones = (totalinputs - realzeros);
+            totalinputs %= Limit;
+            zeros %= Limit;
+            ones %= Limit;
+            realzeros %= Limit;
+            realones %= Limit;
         }
     }
     class INAND : NAND
@@ -51,9 +56,12 @@ namespace Ejercicio_2701
             var gate2 = Circuit[Input2];
             gate1.Process();
             gate2.Process();
-            totalinputs = (gate1.totalinputs * gate2.totalinputs) % Limit;
-            zeros = (gate1.ones * gate2.ones) % Limit;
+            totalinputs = (gate1.totalinputs * gate2.totalinputs);
+            zeros = (gate1.ones * gate2.ones);
             ones = (totalinputs - zeros);
+            totalinputs %= Limit;
+            zeros %= Limit;
+            ones %= Limit;
             realzeros = totalinputs;
             realones = 0;
         }
@@ -66,11 +74,15 @@ namespace Ejercicio_2701
             var gate2 = Circuit[Input2];
             gate1.Process();
             gate2.Process();
-            totalinputs = (gate1.totalinputs * gate2.totalinputs) % Limit;
-            zeros = (gate1.ones * gate2.ones) % Limit;
+            totalinputs = (gate1.totalinputs * gate2.totalinputs);
+            zeros = (gate1.ones * gate2.ones);
             ones = (totalinputs - zeros);
+            totalinputs %= Limit;
+            zeros %= Limit;
+            ones %= Limit;
             realzeros = 0;
             realones = totalinputs;
+            
         }
 
     }
@@ -80,7 +92,7 @@ namespace Ejercicio_2701
         static void Main()
         {
             List<NAND> Gates = new List<NAND>();
-            const decimal Limit = 1000000007;
+            const double Limit = 1000000007;
             int n = int.Parse(Console.ReadLine());
             Gates.AddRange(Enumerable.Range(0, n).Select(_ =>
             {
@@ -105,7 +117,7 @@ namespace Ejercicio_2701
             Gates.Add(new INAND());
             var OutGate = Gates[0];
             OutGate.Process();
-            var testcases = (OutGate.zeros - OutGate.realzeros)%Limit;
+            var testcases = (OutGate.zeros - OutGate.realzeros) % Limit;
             Console.WriteLine(Math.Abs(testcases));
         }
     }
