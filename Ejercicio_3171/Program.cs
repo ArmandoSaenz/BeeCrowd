@@ -34,7 +34,7 @@ namespace Ejercicio_3171
             N = int.Parse(data[0]);
             L = int.Parse(data[1]);
             //Creando nodos
-            List<Node> Leds = Enumerable.Range(0, N).Select((id, _) => new Node()).ToList();
+            List<Node> Leds = Enumerable.Range(0, N).Select(_ => new Node()).ToList();
             //Construyendo grafo
             for (int i = 0; i < L; ++i)
             {
