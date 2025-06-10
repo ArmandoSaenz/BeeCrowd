@@ -1,30 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace Ejercicio_1027
 {
     internal class Program
     {
+        enum State { down, up };
+        static int CountPoints(List<Point> points, int x, int value, State state)
+        {
+            value += state == State.up ? 2 : -2;
+            Point point = points.Find(item => item.x > x && item.y == value);
+            if(point != null)
+                return 1 + CountPoints(points, point.x, point.y, state == State.up?State.down: State.up);
+            return 0;
+        }
         static void Main(string[] args)
         {
             int n;
-            FncCiclica funcion = new FncCiclica();
+            List<Point> Points = new List<Point>();
             while (int.TryParse(Console.ReadLine(), out n))
             {
-                funcion.Clear();
-                for (int i = 0; i < n; i++)
+                Points.Clear();
+                for (; n > 0; --n)
                 {
-                    funcion.Add(new Point(Console.ReadLine()));
+                    Points.Add(new Point(Console.ReadLine()));
                 }
-                funcion.Sort();
-                var lista = funcion.GetPossibleMatches(FncCiclica.PointType.Min);
-                var maxvalue = lista.Values.Max();
-                var point = lista.First(item => item.Value == maxvalue).Key;
-                var matches = funcion.GetMatches(point);
+                Points.Sort();
+                Console.WriteLine(Points.Max(point => Math.Max(CountPoints(Points, point.x, point.y, State.up), CountPoints(Points, point.x, point.y, State.down)) + 1 ));
             }
         }
     }
@@ -46,25 +50,7 @@ namespace Ejercicio_1027
         public int CompareTo(object obj)
         {
             Point pointb = obj as Point;
-            if (x.CompareTo(pointb.x) != 0)
-                return x.CompareTo(pointb.x);
-            else
-                return y.CompareTo(pointb.y);
+            return x.CompareTo(pointb.x);
         }
     }
-    class FncCiclica : List<Point>
-    {
-        public enum PointType
-        {
-            Max,
-            Min
-        };
-        public Dictionary<Point, int> GetPossibleMatches(PointType pt = PointType.Min) => this.ToDictionary(point => point, point=> this.Count(item => item.x > point.x && (item.y==point.y || (pt == PointType.Min ? item.y - point.y  : point.y - item.y) == 2)));
-        public List<Point> GetMatches(Point pointa, PointType pt = PointType.Min) => this.FindAll(pointb => pointb.x > pointa.x && (pointb.y == pointa.y || (pt == PointType.Min ? pointb.y - pointa.y : pointa.y - pointb.y) == 2));
-        public List<Point> Filter(List<Point> matches, PointType pt = PointType.Min)
-        {
-            
-        }
-    }
-
 }
