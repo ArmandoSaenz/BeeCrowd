@@ -5,29 +5,41 @@ using System.Linq;
 
 namespace Ejercicio_3171
 {
+    class Node
+    {
+        public bool Visited { get; set; } = false;
+        public List<Node> Nodes = new List<Node>();
+        public void Route()
+        {
+            if (Visited)
+                return;
+            Visited = true;
+            foreach(Node node in Nodes)
+            {
+                node.Route();
+            }
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
         {
+            //Definición de variables
+            string line;
             string[] data;
-            int[] numbers = new int[100];
-            int L, N;
-            for (string line; !String.IsNullOrEmpty(line = Console.ReadLine());)
             {
+                line = Console.ReadLine();
+                segments.Add(line);
                 data = line.Split(' ');
-                L = int.Parse(data[0]);
-                N = int.Parse(data[1]);
-                ++numbers[L];
-                ++numbers[N];
-            }
-            if(numbers.ToList().TrueForAll(item => item == 2 || item == 0))
-            {
-                Console.WriteLine("COMPLETO");
-            }
+                {
+                }
             else
             {
                 Console.WriteLine("INCOMPLETO");
             }
+            //Recorriendo los leds
+            Leds[0].Route();
+            Console.WriteLine(Leds.TrueForAll(led => led.Visited) ? "COMPLETO" : $"INCOMPLETO");
             Console.ReadLine();
         }
     }
